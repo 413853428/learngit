@@ -1,0 +1,14 @@
+安装完成后，在开始菜单里找到“Git”->“Git Bash”
+
+安装完成后，还需要最后一步设置，在命令行输入：
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+通过git init命令把这个目录变成Git可以管理的仓库。一个.git的目录，这个目录是Git来跟踪管理版本库的。这个目录默认是隐藏的，用ls -ah命令就可以看见。
+
+
+编写一个readme.txt文件，一定要放到learngit目录下（子目录也行）
+
+用命令git add告诉Git，把文件添加到仓库：
+
+用命令git commit告诉Git，把文件提交到仓库：-m后面输入的是本次提交的说明，可以输入任意内容
