@@ -9,9 +9,9 @@ $ git config --global user.email "email@example.com"
 
 编写一个readme.txt文件，一定要放到learngit目录下（子目录也行）
 
-用命令git add告诉Git，把文件添加到仓库：
+用命令git add告诉Git，把文件添加到仓库：把文件修改添加到暂存区
 
-用命令git commit告诉Git，把文件提交到仓库：-m后面输入的是本次提交的说明，可以输入任意内容
+用命令git commit告诉Git，把文件提交到仓库：-m后面输入的是本次提交的说明，可以输入任意内容,把暂存区的所有内容提交到当前分支。并清空暂存区。
 
 运行git status命令可以让我们时刻掌握仓库当前的状态
 
@@ -26,3 +26,11 @@ Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交1094
 只要上面的命令行窗口还没有被关掉，commit id就可以指定回到未来的某个版本git reset --hard commitId
 
 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+
+工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
+Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
+
+命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
